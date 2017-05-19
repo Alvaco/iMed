@@ -1,3 +1,17 @@
+/*
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructura de Datos - Seccion 10
+ * Proyecto consultas medicas
+ * Christopher Sandoval 13660
+ * Fernanda Estrada 14198
+ * Ana Lucia Diaz
+ * Alejandro Vasquez
+ * 18 de mayo del 2017
+ */
+
+
+
+
 package com.example.proyecto_estructura;
 
 import java.io.BufferedReader;
@@ -136,6 +150,10 @@ public class MainActivity extends Activity {
 
 	}
 
+	/*
+	 * Seccion de Google "Speech to Text"
+	 */
+	
 	private void promptSpeechInput() {
 		Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -152,6 +170,10 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	/*
+	 * Seccion de resultados de "Speech to Text"
+	 */
+	
 	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -180,6 +202,9 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	/*
+	 * Seccion de conexion a Watson Natural Language Understanding
+	 */
 
 	class RetrieveFeedTask extends AsyncTask<String, Void, AnalysisResults> {
 
@@ -290,7 +315,10 @@ public class MainActivity extends Activity {
             }
         }
     }
-
+	
+	/*
+	 * Seccion para ingresar al WebService y obtener el codigo/descripcion de las enfermedades
+	 */
 
     class AccesarWebService extends AsyncTask<String, Void, String> {
 
